@@ -50,15 +50,15 @@ a {
   text-decoration: none;
   color: #fff; }
 
+/* variables */
 button {
   width: 100%;
   color: #ffffff;
   border: none;
   font-size: 2rem;
-  padding: 10px;
-  letter-spacing: .09em;
+  letter-spacing: 0.09em;
   cursor: pointer;
-  border-radius: 4px; }
+  padding: 10px; }
 
 .theme {
   background: #009591; }
@@ -79,12 +79,11 @@ button {
   list-style-type: none;
   padding: 0;
   max-width: 800px;
-  margin: 0 auto; }
-
-.flex-outer li {
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center; }
+  margin: 20px auto; }
+  .flex-outer li {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; }
 
 .flex-outer > li:not(:last-child) {
   margin-bottom: 20px; }
@@ -104,28 +103,28 @@ button {
   border: none; }
 
 .tab-group {
-  justify-content: center;
-  margin-bottom: 20px; }
-
-.tab-group li:hover, .tab-group .active {
-  background: #009591;
-  color: #ffffff;
-  border-radius: 4px; }
-
-.tab-group li {
-  flex-direction: row;
-  width: 300px;
-  color: #a0b3b0;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 20px 0px;
-  text-align: center;
-  transition: .5s ease;
-  background: rgba(160, 179, 176, 0.25); }
+  justify-content: center; }
+  .tab-group li {
+    flex-direction: row;
+    list-style: none;
+    width: 50%;
+    font-size: 2rem;
+    letter-spacing: 0.09em;
+    cursor: pointer;
+    padding: 20px 20px;
+    text-align: center;
+    background: #009591; }
 
 .tab-group li a {
   display: block;
   text-decoration: none; }
+
+.clear {
+  width: 100%; }
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 10px; }
 
 @media screen and (max-width: 767px) {
   .flex-outer li {
