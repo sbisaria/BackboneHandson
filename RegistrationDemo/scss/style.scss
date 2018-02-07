@@ -46,9 +46,7 @@ h1 {
     font-weight: 300;
     text-align: center;
 }
-a { text-decoration: none;
-    color: #fff;
-}
+
 /* variables */
 $font : 2rem;
 button {
@@ -91,7 +89,6 @@ button {
 .flex-outer li label{
     padding: 8px 0;
     letter-spacing: .09em;
-    text-transform: capitalize;
     flex: 1 0 120px;
     max-width: 220px;
 }
@@ -106,19 +103,15 @@ button {
     justify-content: center;
     li{
         flex-direction: row;
-    list-style: none;
-    width: 50%;
-    font-size: $font;
-    letter-spacing: 0.09em;
-    cursor: pointer;
-    padding: 20px 20px;
-    text-align: center;
-    background:#009591;
+        list-style: none;
+        width: 50%;
+        font-size: $font;
+        letter-spacing: 0.09em;
+        cursor: pointer;
+        padding: 20px 20px;
+        text-align: center;
+        background:#009591;
     }
-}
-.tab-group li a {
-    display: block;
-    text-decoration: none;
 }
 .clear{
     width: 100%;
@@ -129,7 +122,7 @@ h1{
 }
 @media screen and (max-width: 767px){
     .flex-outer li{
-        flex-wrap: nowrap; 
+        flex-wrap: wrap; 
         align-items: center;
         justify-content: center;
     }
@@ -139,4 +132,10 @@ h1{
 }
 .grid{
     display: grid;
+}
+.help-block{
+    justify-content: flex-end;
+}
+.has-error{
+    border:1px solid red;
 }
