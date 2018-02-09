@@ -7,40 +7,44 @@ var RegisterModel = Backbone.Model.extend({
 		cpassword:null
 	},
 	validate: function(obj){
-		var errors=[],
-		inValid = false;
-		if(obj.firstName==""){
-			errors.push({type: 'firstName', msg:'First name should not be empty'});
-			inValid=true;
+		var errors = [],
+		inValid = false,
+		emailPattren = /^\w+([-+.'][^\s]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+		if(obj.firstName == ""){
+			errors.push({name: 'firstName', msg:'First name should not be empty'});
+			inValid = true;
 		}
-		  if(obj.lastName==""){
-			errors.push({type: 'lastName', msg:'Last name should not be empty'});	
-			inValid=true;
+		if(obj.lastName == ""){
+			errors.push({name: 'lastName', msg:'Last name should not be empty'});
+			inValid = true;
 		}
-		 if(obj.email=="" ){
-			errors.push({type: 'email', msg:'Email should not be empty'});
-			inValid=true;
+		if(!emailPattren.test(obj.email)){
+			errors.push({name: 'email', msg:'Email should be valid'});
+			inValid = true;
 		}
-		 if(obj.password==""){
-			errors.push({type: 'password', msg:'Password should not be empty'});
-			inValid=true;
+		if(obj.email == ""){
+			errors.push({name: 'email', msg:'Email should not be empty'});
+			inValid = true;
 		}
-		 if(obj.cpassword == "" || (obj.password!=obj.cpassword)){
-			errors.push({type: 'cpassword', msg:'Confirm password should match password'});
-			inValid=true;
+		if(obj.password == ""){
+			errors.push({name: 'password', msg:'Password should not be empty'});
+			inValid = true;
+		}
+		if(obj.cpassword == "" && (obj.password != obj.cpassword)){
+			errors.push({name: 'cpassword', msg:'Confirm password should match password'});
+			inValid = true;
 		}
 		if(inValid){
 			this.trigger('failure',errors);
 		}else{
-			var registerModel = new RegisterModel();
-			registerModel.set({
+			this.set({
 			firstName : $("#first-name").val(),
 			lastName : $("#last-name").val(),
 			email : $("#email").val(),
 			password : $("#password").val(),
 			cpassword:$("#cpassword").val()
 		});
-		this.trigger('success',registerModel);
+		this.trigger('success',this);
 		}
     }
 });
@@ -57,7 +61,6 @@ var RegistrationView = Backbone.View.extend({
 		"click #js-submit" : "saveDetails"
 	},
 	saveDetails : function(){
-		
 		this.model.validate({
 			firstName : this.$("#first-name").val(),
 			lastName : this.$("#last-name").val(),
@@ -67,11 +70,14 @@ var RegistrationView = Backbone.View.extend({
 		});
 	},
 	renderError :function(errors){
-		for(var i=0;i<errors.length;i++){
-			var currentDiv= errors[i].type;
-			$("li").find('.'+currentDiv);
-			$('.'+currentDiv+ ' .help-block').text((errors[i]).msg);
-		}
+		$('h2').text(' ');
+		errors.forEach(function(element){
+			var currentDiv = element.name;
+			var target =  '.' + currentDiv +' ' + 'h2';
+			$('.' + currentDiv + ' ' + 'h2').addClass("has-error");
+			var error = (element).msg;
+			$('.' + currentDiv + ' ' +'.has-error').text("*" + error);
+		});
 	},
 	renderDetails : function(newModel){
 		var updatedView = new DetailsView({
