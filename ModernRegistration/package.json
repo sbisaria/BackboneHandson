@@ -1,0 +1,19 @@
+{
+  "name": "modernregistration",
+  "version": "1.0.0",
+  "description": "Demo Project",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shubhangi",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "http-server": "0.11.1",
+    "sass": "^1.0.0-beta.4"
+  }
+}
