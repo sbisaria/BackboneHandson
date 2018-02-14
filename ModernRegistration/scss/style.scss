@@ -23,9 +23,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
-body {
+/*body {
     line-height: 1;
-}
+}*/
 ol, ul {
     list-style: none;
 }
@@ -43,16 +43,15 @@ table {
 }
 /*    Variables*/
 $font-big:3rem;
-$font-md:1.5em;
+$font-md:1em;
 $font-verdana:verdana;
 $flex:flex;
 /* Default Mobile styles*/
 .flex-outer{
     display: $flex;
-    padding: 20px;
     justify-content: center;
     align-items: center;
-    align-content: center;
+    padding: 5px;
     flex-wrap: wrap;
     .heading-row{
         text-align: center;
@@ -65,24 +64,24 @@ $flex:flex;
 .text-lg{
     font-size: $font-big;
     font-family: $font-verdana;
-    padding: 20px 0px;
+    padding: 20px 5px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
 }
 .grid{
     display: grid;
-    line-height: 50px;
+    /*line-height: 50px;*/
     .label{
         background: #999;
         font-size: $font-md;
         color: white;
-        padding-left: 10px;
+        padding-left: 5px;
         font-family: $font-verdana;
     }
 }
 .input-box{
     background: #e6e6e6;
-    line-height: 55px;
+    /*line-height: 55px;*/
     border: none;
     padding-left: 10px;
     font-size: $font-md;
@@ -96,16 +95,15 @@ $flex:flex;
 }
 .grid-full
 {
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 2fr 3fr;
     margin-bottom: 20px;
 }
 .grid-half{
     grid-template-columns: 2fr 2fr;
-    grid-column-gap: 20px;
     margin-bottom: 20px;
     .grid-inner{
         display: grid;
-        grid-template-columns: 2fr 3fr;
+        grid-template-columns: 2fr 1fr;
     }  
 }
 .sign-up{
@@ -119,27 +117,49 @@ $flex:flex;
     cursor: pointer;
     text-transform: uppercase;
 }
+/*desktop styles*/
+@media only screen  and (min-width : 768px)  {
+    form{
+        max-width: 700px;
+        margin: 20px auto;
+    }
+     .flex-outer{
+        padding: 10px;
+        .input-row{
+            display: $flex;
+            flex-wrap: wrap;
+        }
+        .item{
+            flex: 1 1 100px;
+        }
+        .grid{
+            /*line-height: 28px;*/
+            .label{
+                width: 150px;
+                padding-top: 15px;
+            }
+        }
+        .grid-full
+        {
+            grid-template-columns: 1fr 4fr;
+        }
+        .grid-inner{
+            grid-template-columns: 2fr 3fr;
+        }
+        .sign-up{
+            margin-left: 190px;
+            width: 300px;
+        }
+    }
+}
 /*ipad and tab styles*/
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
     form{
-        box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
         max-width: 700px;
         margin: 20px auto;
     }
     .flex-outer{
-        display: $flex;
         padding: 20px;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        flex-wrap: wrap;
-        .heading-row{
-            text-align: center;
-            width: 100%;
-            background:#57b130;
-            color:#fff;
-            margin-bottom: 20px;
-        }
         .input-row{
             display: $flex;
             flex-wrap: wrap;
@@ -149,63 +169,73 @@ $flex:flex;
         }
     }
     .grid{
-        display: grid;
-        line-height: 28px;
-        .label{
-            width: 150px;
-            padding-top: 15px;
-        }
+        /*line-height: 28px;*/
     }
-    .full{
-        width: 99%;
+    .grid-full{
+        grid-template-columns: 1fr 7fr;
     }
-    .half{
-        width: 97%;
+    
+    .grid-inner{
+        grid-template-columns: 2fr 3fr;
     }
     .sign-up{
         margin-left: 190px;
         width: 300px;
     }
 }
-/* */
-@media only screen  and (min-width : 1024px)  {
-    form{
-        background: #b3b3b3;
-        max-width: 700px;
-        margin: 20px auto;
-    }
-     .flex-outer{
-        display: $flex;
-        padding: 20px;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        flex-wrap: wrap;
+/*small mobiles */
+@media only screen and(min-device-width : 320px) and (max-device-width :412px) {
+    .flex-outer{
+        width:700px;
+        padding: 15px 20px 0px 15px;
         .heading-row{
-            text-align: center;
-            width: 60%;
-            background:#57b130;
-            color:#fff;
-            margin-bottom: 20px;
+            width:380px;
+        }
+    }
+    .text-lg{
+        letter-spacing: 0.2em;
+    }
+    .grid{
+        /*line-height: 50px;*/
+    }
+    .grid-full
+    {
+        grid-template-columns: 2fr 3fr;
+    }
+    .grid-inner{
+        grid-template-columns: 0.8fr 1fr;
+    }
+    .sign-up{
+        margin-left: 25%;
+        width: 50%;
+    }
+}
+@media (min-width : 320px) and (max-width : 767px ){
+    .flex-outer{
+        width:auto;
+        padding: 15px 15px 0px 15px;
+        .heading-row{
+            width:100%;
         }
         .input-row{
-            display: $flex;
-            flex-wrap: wrap;
+            padding-right: 8px;
         }
-        .item{
-            flex: 1 1 100px;
-        }
-        .grid{
-            display: grid;
-            line-height: 28px;
-            .label{
-                width: 150px;
-                padding-top: 15px;
-            }
-        }
-        .sign-up{
-            margin-left: 190px;
-            width: 300px;
-        }
+    }
+    .text-lg{
+        letter-spacing: 0.2em;
+    }
+    .grid{
+        /*line-height: 50px;*/
+    }
+    .grid-full
+    {
+        grid-template-columns: 2fr 3fr;
+    }
+    .grid-inner{
+        grid-template-columns: 0.8fr 1fr;
+    }
+    .sign-up{
+        margin-left: 25%;
+        width: 50%;
     }
 }
