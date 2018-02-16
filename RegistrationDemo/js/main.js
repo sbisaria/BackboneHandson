@@ -38,13 +38,13 @@ var RegisterModel = Backbone.Model.extend({
 			this.trigger('failure',errors);
 		}else{
 			this.set({
-			firstName : $("#first-name").val(),
-			lastName : $("#last-name").val(),
-			email : $("#email").val(),
-			password : $("#password").val(),
-			cpassword:$("#cpassword").val()
-		});
-		this.trigger('success',this);
+				firstName : $("#first-name").val(),
+				lastName : $("#last-name").val(),
+				email : $("#email").val(),
+				password : $("#password").val(),
+				cpassword:$("#cpassword").val()
+			});
+			this.trigger('success',this);
 		}
     }
 });
@@ -81,7 +81,7 @@ var RegistrationView = Backbone.View.extend({
 	},
 	renderDetails : function(newModel){
 		var updatedView = new DetailsView({
-			el : "#container",
+			el : "#container", 
 			model : newModel
 		}).render();
 	}

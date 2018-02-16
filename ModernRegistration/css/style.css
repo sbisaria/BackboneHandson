@@ -112,7 +112,7 @@ table {
     display: -moz-grid;
     display: -ms-grid;
     display: grid;
-    grid-template-columns: 2fr 1fr; }
+    grid-template-columns: 1fr 1fr; }
 
 .sign-up {
   height: 55px;

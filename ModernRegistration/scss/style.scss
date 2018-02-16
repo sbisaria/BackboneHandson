@@ -131,7 +131,7 @@ $green:#57b130;
     margin-bottom: 20px;
     .grid-inner{
         @include gridbox;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }  
 }
 .sign-up{
