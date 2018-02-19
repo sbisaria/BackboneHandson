@@ -7,6 +7,15 @@ body{
     text-align: center;
     padding: 10px;
 }
+.form {
+    color: #ffffff;
+    background: rgba(19, 35, 47, 0.9);
+    padding: 30px;
+    max-width: 600px;
+    margin: 20px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
 .container {
     border-radius: 4px;
 }
@@ -31,10 +40,11 @@ body{
     li{
         flex-wrap: wrap;
         flex-direction: column;
+        text-align: left;
         @include gridbox;
         label{
             background: $dark-grey;
-            padding: 15px 0;
+            padding: 15px 10px;
             margin-bottom: 10px;
             color: $font-white;
             font-size: $font-md;
@@ -60,6 +70,13 @@ body{
     cursor: pointer;
     text-transform: uppercase;
 }
+#error{
+    display: none;
+}
+.has-error{
+    display: block;
+    color:red;
+}
 /*  Desktop   */
 @media (min-width: 1024px){
     .flex-outer{
@@ -70,6 +87,9 @@ body{
         .item{
             grid-template-columns: repeat(4 ,1fr);
         }
+        li:last-child{
+            padding: 0 40%;
+        }
     }
 }   
 /*  ipad styles    */
@@ -78,6 +98,9 @@ body{
         li{
             flex-direction: row;
             grid-template-columns: 2fr 4fr;
+        }
+        li:last-child{
+            padding: 0 20%;
         }
     }
 }

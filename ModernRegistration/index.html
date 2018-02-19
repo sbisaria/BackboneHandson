@@ -6,112 +6,83 @@
 	<script type="text/javascript" src="js/libs/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/libs/underscore-min.js"></script>
 	<script type="text/javascript" src="js/libs/backbone-min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 	<meta name="viewport" content="width=device-width">
+	<script type="text/template" id="registration-template">
+		<ul class="flex tab-group">
+	        <li><a class="text-lg">Register Here</a></li>
+	    </ul>
+		<form >
+			<ul class="flex-outer">
+				<li class="flex item">
+					<label for="first-name">First Name</label>
+					<input type="text" id="first-name" placeholder="Enter your first name here" required>
+					<h2 class="firstName" id="error"></h2>
+					<label for="last-name">Last Name</label>
+					<input type="text" id="last-name" placeholder="Enter your last name here" required>
+				</li>
+				<li class="flex">
+					<label for="address">Address</label>
+					<input type="text" id="address" placeholder="Enter your address" required>
+				</li>
+				<li class="flex item">
+					<label for="city">City</label>
+					<input type="text" id="city" placeholder="Enter your city" required>
+					<label for="pin">Pin Code</label>
+					<input type="text" id="pin" placeholder="Enter your pin code" required>
+				</li>
+				<li class="flex item">
+					<label for="age">Age</label>
+					<input type="text" id="age" placeholder="Enter your age" required>
+					<label for="gender">Gender</label>
+					<input type="text" id="gender" placeholder="Enter your gender" required>
+				</li>
+				<li class="flex">
+					<label for="email">Email</label>
+					<input type="email" id="email" placeholder="Enter your e-mail here">
+				</li>
+				<li class="flex item">
+					<label for="mobile1">Mobile 1</label>
+					<input type="text" id="mobile1" placeholder="Enter your mobile no" required>
+					<label for="mobile1">Mobile 2</label>
+					<input type="text" id="mobile2">
+				</li>
+				<li class="flex item">
+					<label for="country">Country</label>
+					<input type="text" id="country" placeholder="Enter your country" required>
+					<label for="nationality">Nationality</label>
+					<input type="text" id="nationality" placeholder="Enter your nationality" required>
+				</li>
+				<li class="flex item">
+					<label for="password">Password</label>
+					<input type="password" id="password" placeholder="Enter password">
+					<label for="mobile1">Confirm Password</label>
+					<input type="password" id="cpassword" placeholder="Enter confirm password">
+				</li>
+				<li class="flex">
+					<button type="button" type="button" id="js-submit" class="btn-box">Sign Up</button>
+				</li>
+			</ul>
+		</form>
+	</script>
+	<script type="text/html" id="detail-template">
+		<div id="detailApp">
+			<ul class="flex tab-group">
+		        <li class="tablinks clear" id="tab1"><a>User Details</a></li>
+		    </ul>
+		    <ul class="flex-outer">
+		        <li class="grid grid-item"><h1>First Name : </h1><h3><%= firstName %></h3></li>
+		        <li class="grid grid-item"><h1>Last Name : </h1><h3><%= lastName %></h3></li>
+		        <li class="grid grid-item"><h1>Email : </h1><h3><%= email %></h3></li>
+		      	<li class="grid grid-item"><h1>Password : </h1><h3><%= password%></h3></li>
+		    </ul>
+		</div>
+	</script>
 </head>
 <body>
-	<div class="container">
-		<ul class="flex tab-group">
-        <li><a class="text-lg">Register Here</a></li>
-    </ul>
-	<form >
-		<ul class="flex-outer">
-			<li class="flex item">
-				<label for="first-name">First Name</label>
-				<input type="text" name="first-name" required>
-				<label for="last-name">Last Name</label>
-				<input type="text" name="last-name" required>
-			</li>
-			<li class="flex">
-				<label for="address">Address</label>
-				<input type="text" name="address" required>
-			</li>
-			<li class="flex item">
-				<label for="city">City</label>
-				<input type="text" name="city" required>
-				<label for="pin">Pin Code</label>
-				<input type="text" name="pin" required>
-			</li>
-			<li class="flex item">
-				<label for="age">Age</label>
-				<input type="text" name="age" required>
-				<label for="gender">Gender</label>
-				<input type="text" name="gender" required>
-			</li>
-			<li class="flex">
-				<label for="email">Email</label>
-				<input type="text" name="email" required>
-			</li>
-			<li class="flex item">
-				<label for="mobile1">Mobile 1</label>
-				<input type="text" name="mobile1" required>
-				<label for="mobile1">Mobile 2</label>
-				<input type="text" name="mobile2" required>
-			</li>
-			<li class="flex item">
-				<label for="country">Country</label>
-				<input type="text" name="country" required>
-				<label for="nationality">Nationality</label>
-				<input type="text" name="nationality" required>
-			</li>
-			<li class="flex">
-				<button type="button" class="btn-box">Sign Up</button>
-			</li>
-		</ul>
-	</form>
+	<div id="container">
+		
 	</div>
-	
-	<!-- <form class="flex-outer">
-		<div class="heading-row"><h1 class="text-lg">Register</h1></div>
-		<div class="input-row">
-			<div class="grid grid-full item">
-				<div class="label">First Name</div>
-				<div class=""><input type="text" class="input-box full" name="first-name"></div>
-			</div>
-			<div class="grid grid-full item">
-				<div class="label">Last Name</div>
-				<div class=""><input type="text" class="input-box full" name="last-name"></div>
-			</div>
-			<div class="grid grid-full">
-				<div class="label">Address</div>
-				<div class=""><input type="text" class="input-box full" name="address"></div>
-			</div>
-			<div class="grid grid-full">
-				<div class="label">City</div>
-				<div class=""><input type="text" class="input-box full" name="city"></div>
-			</div>
-			<div class="grid grid-full">
-				<div class="label">Pin Code</div>
-				<div class=""><input type="text" class="input-box full" name="pin"></div>
-			</div>
-			<div class="grid grid-full">
-				<div class="label">Age</div>
-				<div class=""><input type="text" class="input-box full" name="age"></div>
-			</div>
-			<div class="grid grid-full">
-				<div class="label">Gender</div>
-				<div class=""><input type="text" class="input-box full" name="gender"></div>
-			</div>
-			<div class="grid grid-full">
-				<div class="label">Email</div>
-				<div class=""><input type="text" class="input-box full" name="email"></div>
-			</div>
-			<div class="grid grid-full">
-				<div class="label">Mobile 1:</div>
-				<div class=""><input type="text" class="input-box full" name="mobile1"></div>
-			</div>
-			<div class="grid grid-full">
-				<div class="label">Mobile 2:</div>
-				<div class=""><input type="text" class="input-box full" name="mobile2"></div>
-			</div>
-			<div class="grid grid-full">
-				<div class="label">Nationality</div>
-				<div class=""><input type="text" class="input-box full" name="mobile2"></div>
-			</div>
-			<div class="flex">
-				<div class="btn-box"><button type="button" class="sign-up">Sign Up</button></div>
-			</div>
-		</div>
-	</form> -->
 </body>
 </html>
 
