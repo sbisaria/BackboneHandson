@@ -1,76 +1,5 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-ol, ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-/*    Variables     */
-$font-big:3rem;
-$font-md:1em;
-$font-verdana:verdana;
-$font-white:#fff;
-$dark-grey:#999;
-$light-grey:#e6e6e6;
-$green:#57b130;
-/*    Mixins      */
-@mixin flexbox {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-@mixin wrap {
-    flex-wrap: -webkit-flex-wrap;
-    flex-wrap: -moz-flex-wrap;
-    flex-wrap: -ms-flex-wrap;
-    flex-wrap: wrap;
-}
-@mixin gridbox{
-    display: -webkit-grid;
-    display: -moz-grid;
-    display: -ms-grid;
-    display: grid;
-}
-@mixin grid-columns{
-    -webkit-grid-columns : 2fr 2fr;
-    -ms-grid-columns : 2fr 2fr;
-    grid-template-columns: 2fr 2fr;
-}
+@import 'reset';
+@import 'config';
 /* Default Mobile styles*/
 .flex-outer{
     @include flexbox;
@@ -126,7 +55,6 @@ $green:#57b130;
     margin-bottom: 20px;
 }
 .grid-half{
-    /*grid-template-columns: 2fr 2fr;*/
     @include grid-columns;
     margin-bottom: 20px;
     .grid-inner{
@@ -146,7 +74,7 @@ $green:#57b130;
     text-transform: uppercase;
 }
 /*Desktop styles*/
-@media only screen  and (min-width : 768px)  {
+@media  (min-width : 768px)  {
     form{
         max-width: 700px;
         margin: 20px auto;
@@ -169,7 +97,7 @@ $green:#57b130;
             grid-template-columns: 1fr 4fr;
         }
         .grid-inner{
-            grid-template-columns: 2fr 3fr;
+            grid-template-columns: 1fr 4fr;
         }
         .sign-up{
             margin-left: 190px;
@@ -178,7 +106,7 @@ $green:#57b130;
     }
 }
 /*ipad and Tab styles*/
-@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
+@media  (min-width : 768px) and (max-width : 1023px){
     form{
         max-width: 700px;
         margin: 20px auto;
@@ -204,7 +132,7 @@ $green:#57b130;
     }
 }
 /*Small Mobiles */
-@media only screen and(min-device-width : 320px) and (max-device-width :412px) {
+@media (min-width : 320px) and (max-width :412px) {
     .flex-outer{
         width:700px;
         padding: 15px 20px 0px 15px;

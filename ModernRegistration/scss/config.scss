@@ -1,0 +1,34 @@
+/*    Variables     */
+$font-big:3rem;
+$font-md:1em;
+$font-verdana:verdana;
+$font-white:#fff;
+$dark-grey:#999;
+$light-grey:#e6e6e6;
+$green:#57b130;
+
+/*    Mixins      */
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+@mixin wrap {
+    flex-wrap: -webkit-flex-wrap;
+    flex-wrap: -moz-flex-wrap;
+    flex-wrap: -ms-flex-wrap;
+    flex-wrap: wrap;
+}
+@mixin gridbox{
+    display: -webkit-grid;
+    display: -moz-grid;
+    display: -ms-grid;
+    display: grid;
+}
+@mixin grid-columns{
+    -webkit-grid-columns : 2fr 2fr;
+    -ms-grid-columns : 2fr 2fr;
+    grid-template-columns: 2fr 2fr;
+}
