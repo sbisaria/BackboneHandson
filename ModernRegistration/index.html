@@ -9,7 +9,58 @@
 	<meta name="viewport" content="width=device-width">
 </head>
 <body>
-	<form class="flex-outer">
+	<div class="container">
+		<ul class="flex tab-group">
+        <li><a class="text-lg">Register Here</a></li>
+    </ul>
+	<form >
+		<ul class="flex-outer">
+			<li class="flex item">
+				<label for="first-name">First Name</label>
+				<input type="text" name="first-name" required>
+				<label for="last-name">Last Name</label>
+				<input type="text" name="last-name" required>
+			</li>
+			<li class="flex">
+				<label for="address">Address</label>
+				<input type="text" name="address" required>
+			</li>
+			<li class="flex item">
+				<label for="city">City</label>
+				<input type="text" name="city" required>
+				<label for="pin">Pin Code</label>
+				<input type="text" name="pin" required>
+			</li>
+			<li class="flex item">
+				<label for="age">Age</label>
+				<input type="text" name="age" required>
+				<label for="gender">Gender</label>
+				<input type="text" name="gender" required>
+			</li>
+			<li class="flex">
+				<label for="email">Email</label>
+				<input type="text" name="email" required>
+			</li>
+			<li class="flex item">
+				<label for="mobile1">Mobile 1</label>
+				<input type="text" name="mobile1" required>
+				<label for="mobile1">Mobile 2</label>
+				<input type="text" name="mobile2" required>
+			</li>
+			<li class="flex item">
+				<label for="country">Country</label>
+				<input type="text" name="country" required>
+				<label for="nationality">Nationality</label>
+				<input type="text" name="nationality" required>
+			</li>
+			<li class="flex">
+				<button type="button" class="btn-box">Sign Up</button>
+			</li>
+		</ul>
+	</form>
+	</div>
+	
+	<!-- <form class="flex-outer">
 		<div class="heading-row"><h1 class="text-lg">Register</h1></div>
 		<div class="input-row">
 			<div class="grid grid-full item">
@@ -53,10 +104,6 @@
 				<div class=""><input type="text" class="input-box full" name="mobile2"></div>
 			</div>
 			<div class="grid grid-full">
-				<div class="label">Country</div>
-				<div class=""><input type="text" class="input-box full" name="country"></div>
-			</div>
-			<div class="grid grid-full">
 				<div class="label">Nationality</div>
 				<div class=""><input type="text" class="input-box full" name="mobile2"></div>
 			</div>
@@ -64,7 +111,7 @@
 				<div class="btn-box"><button type="button" class="sign-up">Sign Up</button></div>
 			</div>
 		</div>
-	</form>
+	</form> -->
 </body>
 </html>
 

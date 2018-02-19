@@ -32,3 +32,8 @@ $green:#57b130;
     -ms-grid-columns : 2fr 2fr;
     grid-template-columns: 2fr 2fr;
 }
+%li-shared{
+    flex-direction: row;
+    grid-template-columns: 2fr 4fr;
+    justify-items:stretch;
+}
