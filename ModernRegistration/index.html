@@ -15,52 +15,65 @@
 		<form >
 			<ul class="flex-outer">
 				<li class="flex item">
-					<label for="first-name">First Name</label>
-					<input type="text" id="first-name" placeholder="Enter your first name here" required>
-					<h2 class="firstName" id="error"></h2>
-					<label for="last-name">Last Name</label>
-					<input type="text" id="last-name" placeholder="Enter your last name here" required>
+					<label for="first-name" class="a">First Name</label>
+					<input type="text" id="first-name" class="b" placeholder="Enter your first name here" required>
+					<div class="firstName error-box c"></div>
+					<label for="last-name" class="d">Last Name</label>
+					<input type="text" id="last-name" class="e" placeholder="Enter your last name here" required>
+					<div class="lastName error-box f"></div>
 				</li>
 				<li class="flex">
 					<label for="address">Address</label>
 					<input type="text" id="address" placeholder="Enter your address" required>
+					<div class="address error-box"></div>
 				</li>
 				<li class="flex item">
-					<label for="city">City</label>
-					<input type="text" id="city" placeholder="Enter your city" required>
-					<label for="pin">Pin Code</label>
-					<input type="text" id="pin" placeholder="Enter your pin code" required>
+					<label for="city" class="a">City</label>
+					<input type="text" id="city" class="b" placeholder="Enter your city" required>
+					<div class="city error-box c"></div>
+					<label for="pin" class="d">Pin Code</label>
+					<input type="text" id="pin" class="e" placeholder="Enter your pin code" required>
+					<div class="pin error-box f"></div>
 				</li>
 				<li class="flex item">
-					<label for="age">Age</label>
-					<input type="text" id="age" placeholder="Enter your age" required>
+					<label for="age" class="a">Age</label>
+					<input type="text" id="age" class="b" placeholder="Enter your age" required>
+					<div class="age error-box c"></div>
 					<label for="gender">Gender</label>
 					<input type="text" id="gender" placeholder="Enter your gender" required>
+					<div class="gender error-box f"></div>
 				</li>
 				<li class="flex">
 					<label for="email">Email</label>
 					<input type="email" id="email" placeholder="Enter your e-mail here">
+					<div class="email error-box"></div>
 				</li>
 				<li class="flex item">
-					<label for="mobile1">Mobile 1</label>
-					<input type="text" id="mobile1" placeholder="Enter your mobile no" required>
-					<label for="mobile1">Mobile 2</label>
-					<input type="text" id="mobile2">
+					<label for="mobile1" class="a">Mobile 1</label>
+					<input type="text" id="mobile1" class="b" placeholder="Enter your mobile no" required>
+					<div class="mobile1 error-box c"></div>
+					<label for="mobile1" class="d">Mobile 2</label>
+					<input type="text" id="mobile2" class="e">
+					<div class="mobile2 error-box f"></div>
 				</li>
 				<li class="flex item">
-					<label for="country">Country</label>
-					<input type="text" id="country" placeholder="Enter your country" required>
-					<label for="nationality">Nationality</label>
-					<input type="text" id="nationality" placeholder="Enter your nationality" required>
+					<label for="country" class="a">Country</label>
+					<input type="text" id="country" class="b" placeholder="Enter your country" required>
+					<div class="country error-box c"></div>
+					<label for="nationality" class="d">Nationality</label>
+					<input type="text" id="nationality" class="e" placeholder="Enter your nationality" required>
+					<div class="nationality error-box f"></div>
 				</li>
 				<li class="flex item">
-					<label for="password">Password</label>
-					<input type="password" id="password" placeholder="Enter password">
-					<label for="mobile1">Confirm Password</label>
-					<input type="password" id="cpassword" placeholder="Enter confirm password">
+					<label for="password" class="a">Password</label>
+					<input type="password" id="password" class="b" placeholder="Enter password">
+					<div class="password error-box c"></div>
+					<label for="mobile1" class="d">Confirm Password</label>
+					<input type="password" id="cpassword" class="e" placeholder="Enter confirm password">
+					<div class="cpassword error-box f"></div>
 				</li>
 				<li class="flex">
-					<button type="button" type="button" id="js-submit" class="btn-box">Sign Up</button>
+					<button type="submit" id="js-submit" class="btn-box">Sign Up</button>
 				</li>
 			</ul>
 		</form>

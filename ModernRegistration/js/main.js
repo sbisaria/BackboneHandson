@@ -75,7 +75,11 @@ var RegisterModel = Backbone.Model.extend({
 			errors.push({name: 'password', msg:'Password should not be empty'});
 			inValid = true;
 		}
-		if(obj.cpassword == "" && (obj.password != obj.cpassword)){
+		if(obj.cpassword == ""){
+			errors.push({name: 'cpassword', msg:'Confirm password should not be empty'});
+			inValid = true;
+		}
+		if(obj.password != obj.cpassword){
 			errors.push({name: 'cpassword', msg:'Confirm password should match password'});
 			inValid = true;
 		}
@@ -133,13 +137,12 @@ var RegistrationView = Backbone.View.extend({
 		});
 	},
 	renderError :function(errors){
-		$('#error').text(' ');
+		$('.error-box').empty();
 		errors.forEach(function(element){
-			var currentDiv = element.name;
-			var target =  '.' + currentDiv;
-			$('.' + currentDiv).addClass("has-error");
-			var error = (element).msg;
-			$('.' + currentDiv + ' ' +'.has-error').text("*" + error);
+			var currentDiv = element.name,
+			    errEle = document.createElement('h2');
+			$(errEle).addClass('has-error').text('*' + element.msg);
+			$('.' + currentDiv).empty().append(errEle);
 		});
 	},
 	renderDetails : function(newModel){
