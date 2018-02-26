@@ -81,13 +81,22 @@
 	<script type="text/html" id="detail-template">
 		<div id="detailApp">
 			<ul class="flex tab-group">
-		        <li class="tablinks clear" id="tab1"><a>User Details</a></li>
+		        <li class="text-lg" id="tab1"><a>User Details</a></li>
 		    </ul>
 		    <ul class="flex-outer">
-		        <li class="grid grid-item"><h1>First Name : </h1><h3><%= firstName %></h3></li>
-		        <li class="grid grid-item"><h1>Last Name : </h1><h3><%= lastName %></h3></li>
-		        <li class="grid grid-item"><h1>Email : </h1><h3><%= email %></h3></li>
-		      	<li class="grid grid-item"><h1>Password : </h1><h3><%= password%></h3></li>
+		        <li class="flex detail-item"><h1 class="detail-label">First Name : </h1><h3 class="input-value"><%= firstName %></h3></li>
+		        <li class="flex detail-item"><h1 class="detail-label">Last Name : </h1><h3 class="input-value"><%= lastName %></h3></li>
+		        <li class="flex detail-item"><h1 class="detail-label">Address : </h1><h3 class="input-value"><%= address%></h3></li>
+		        <li class="flex detail-item"><h1 class="detail-label">City :</h1><h3 class="input-value"><%= city%></h3></li>
+		        <li class="flex detail-item"><h1 class="detail-label">Pin Code : </h1><h3 class="input-value"><%= pin%></h3></li>
+		        <li class="flex detail-item"><h1 class="detail-label">Gender : </h1><h3 class="input-value"><%=gender %></h3></li>
+		        <li class="flex detail-item"><h1 class="detail-label">Age : </h1><h3 class="input-value"><%=age %></h3></li>
+		        <li class="flex detail-item"><h1 class="detail-label">Email : </h1><h3 class="input-value"><%= email %></h3></li>
+		        <li class="flex detail-item"><h1 class="detail-label">Mobile 1 : </h1><h3 class="input-value"><%=mobile1 %></h3></li>
+		        <li class="flex detail-item"><h1 class="detail-label">Mobile 2 : </h1><h3 class="input-value"><%=mobile2 %></h3></li>
+		        <li class="flex detail-item"><h1 class="detail-label">Country : </h1><h3 class="input-value"><%=country %></h3></li>
+		        <li class="flex detail-item"><h1 class="detail-label">Nationality : </h1><h3 class="input-value"><%=nationality %></h3></li>
+		      	<li class="flex detail-item"><h1 class="detail-label">Password : </h1><h3 class="input-value"><%=password %></h3></li>
 		    </ul>
 		</div>
 	</script>
@@ -98,4 +107,3 @@
 	</div>
 </body>
 </html>
-

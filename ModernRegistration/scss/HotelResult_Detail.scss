@@ -1,0 +1,143 @@
+
+@function box-gap($boxes, $gap) {
+  $box: ();
+
+  @for $i from 1 through length($boxes) {
+    $box: append($box, nth($boxes, $i), space);
+
+    // Adding Gap Between
+    @if $gap > 0 {
+      // Not last Loop
+      @if $i != length($boxes) {
+        $box: append($box, $gap, space);
+      }
+    }
+  }
+
+  @return $box;
+}
+
+/// To build Grid Template Columns with optional gap
+///
+/// @group core - cssgrid
+///
+/// @param   {string}  $gap - Optional column gap
+/// @param   {list}    $columns - Columns sizes
+///
+/// @require {function} box-gap
+///
+/// @example scss - scss
+///   .test {
+///     @include grid-columns(10px 250px 1fr 50px 100px);
+///   }
+@mixin grid-columns($gap, $columns) {
+  /* autoprefixer: off */
+  grid-template-columns: $columns;
+  /* autoprefixer: on */
+  @if $gap > 0 {
+    grid-column-gap: $gap;
+  }
+
+  .old-grid-spec & {
+    -ms-grid-columns: box-gap($columns, $gap);
+  }
+}
+
+/// To build Grid Template Rows with optional gap
+///
+/// @group core - cssgrid
+///
+/// @param   {string}  $gap - Optional row gap
+/// @param   {list}    $rows - Rows sizes
+///
+/// @require {function} box-gap
+///
+/// @example scss - scss
+///   .test {
+///     @include grid-rows(10px 1fr);
+///   }
+@mixin grid-rows($gap, $rows) {
+  /* autoprefixer: off */
+  grid-template-rows: $rows;
+  /* autoprefixer: on */
+  @if $gap > 0 {
+    grid-row-gap: $gap;
+  }
+
+  .old-grid-spec & {
+    -ms-grid-rows: box-gap($rows, $gap);
+  }
+}
+@mixin grid-matrix($map) {
+  $matrix: ();
+
+  @each $index, $row in $map {
+    $list: null;
+
+    @for $i from 1 through length($row) {
+      $list: append($list, unquote(nth(($row), $i)), space);
+    }
+
+    $matrix: append($matrix, quote($list), space);
+  }
+
+  grid-template-areas: $matrix;
+}
+$gridAreaMap: (
+  row1: ('mainInfo', 'mainInfo', 'carousel', 'carousel'),
+  row2: ('searchBox', 'searchBox', 'searchBox', 'searchBox'),
+  row3: ('rooms','rooms','rooms','rooms'),
+  row4: ('reviews','reviews','reviews','reviews'),
+  row5: ('hotelInfo','hotelInfo','hotelInfo','amenities')
+);
+.hotel-details-grid-container{
+  display: grid;
+  grid-template-areas:
+    @include grid-matrix($gridAreaMap);
+}
+/*.hotel-details-grid-container > div{
+  border: 1px solid red;
+  min-height: 200px;
+}*/
+/*.item-main-info {
+  grid-area: mainInfo;
+}
+.item-carousel{
+  grid-area:carousel;
+}
+.item-search-box{
+  grid-area:searchBox;
+}
+.item-rooms{
+  grid-area:rooms;
+}
+
+.item-reviews{
+  grid-area:reviews;
+}
+.item-hotel-info {
+  grid-area: hotelInfo;
+}
+.item-amenties {
+  grid-area: amenities;
+}
+*/
+/*.hotel-details-grid-container{
+  display: grid;
+  grid-template-rows:row;
+}
+.hotel-details-grid-container> div{
+  border: 1px solid red;
+  min-height: 200px;
+}
+.hotel-details-grid-container .item-main-info,.item-Hotel-info{
+  grid-column:1/6;
+}
+.hotel-details-grid-container .item-carousel,.item-amenties{
+  grid-column:6/12;
+}
+.hotel-details-grid-container .item-search-box,.item-rooms,.item-reviews{
+  grid-column:1/12;
+}*/
+
+
